@@ -1,0 +1,72 @@
+.btn-princ {
+                            display: flex;
+                            gap: 1rem;
+                            width: 100%;
+                            justify-content: center;
+                            background-color: #BF047E;
+                            border-radius: 8px;
+                            padding: 0.5rem;
+                            transition: 
+                                background-color 0.3s;
+                        
+                            .m-icon {
+                                stroke: #FFF5FB;
+                                transition: none;
+                            }
+                            
+                            p {
+                                color: #FFF5FB;
+                                font-weight: bold;
+                                font-size: 1rem;
+                            }
+
+                            &:hover {
+                                background-color: #6E0248;
+                            }
+
+                            &:focus {
+                                    stroke: 3px, #6E0248;
+                                }
+
+                            &:active {
+                                stroke: 3px, #6E0248;
+                            }
+
+                            &:disabled {
+                                    background-color: #706C78;
+                                }
+                            
+                        }
+
+                        
+                
+                        .btn-second {
+                            display: flex;
+                            width: 100%;
+                            justify-content: center;
+                            color: #BF047E;
+                            font-weight: bold;
+                            font-size: 1rem;
+                            background-color: rgba(0, 0, 0, 0);
+                            border-bottom: 3px solid #fff;
+                                padding-bottom: 0.5rem;
+
+                            &:hover {
+                                border-bottom: 3px solid #BF047E;
+                                padding-bottom: 0.5rem;
+                            }
+
+                            &:focus {
+                                    color: #6E0248;
+                                }
+
+                            &:active {
+                                border-bottom: 3px solid #6E0248;
+                                padding-bottom: 0.5rem;
+                            }
+
+                            &:disabled {
+                                    color: #706C78;
+                                }
+                        }
+                    }

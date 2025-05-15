@@ -32,6 +32,7 @@ body {
                 margin-top: 1.5rem;
             }
         }
+        
         .card-container {
             display: flex;
             flex-wrap: wrap;
@@ -73,6 +74,7 @@ body {
                         display: flex;
                         flex-direction: column;
                         gap: 0.5rem;
+
                         .advert {
                             display: flex;
                             flex-direction: row;
@@ -138,10 +140,6 @@ body {
                                 font-size: 1rem;
                             }
 
-                            &:hover {
-                                background-color: #6E0248;
-                            }
-
                             &:focus {
                                     stroke: 3px, #6E0248;
                                 }
@@ -169,9 +167,6 @@ body {
                             border-bottom: 3px solid #fff;
                                 padding-bottom: 0.5rem;
 
-                            &:hover {
-                                color: #6E0248;
-                            }
 
                             &:focus {
                                     color: #6E0248;
@@ -196,16 +191,16 @@ body {
         }          
 
         .m-icon {
-                    width: 1.5rem;
-                    fill: none;
-                    stroke: #000;
-                    stroke-width: 2px;
-                }
+            width: 1.5rem;
+            fill: none;
+            stroke: #000;
+            stroke-width: 2px;
+        }
 
         .navbar {
             display: flex;
             flex-direction: row;
-            background-color: #FFF5FB;
+            background-color: #FFF;
             position: fixed;
             bottom: 0;
             width: 375px;
