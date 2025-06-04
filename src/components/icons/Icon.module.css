@@ -7,14 +7,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.iconHeart {
+  .iconHeart {
   font-size: 1.5rem;
   transition: color 0.2s;
   color: var(--text-color);
 }
 
-.active {
-  color: var(--light-blue);
+  .active {
+    color: var(--light-blue);
+  }
 }
+

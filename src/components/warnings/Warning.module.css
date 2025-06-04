@@ -30,4 +30,5 @@
 
 .text {
   flex: 1;
+  text-align: left;
 }

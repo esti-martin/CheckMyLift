@@ -5,7 +5,6 @@ type WarningType = "positive" | "negative";
 
 type WarningMessageProps = {
   type: WarningType; // "positive" o "negative"
-  children: React.ReactNode;
   className?: string;
 };
 

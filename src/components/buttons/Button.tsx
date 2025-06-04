@@ -1,4 +1,5 @@
 import styles from "./Button.module.css";
+import { LuMapPin } from "react-icons/lu";
 
 type ButtonProps = {
   children: React.ReactNode;
@@ -22,6 +23,8 @@ const Button: React.FC<ButtonProps> = ({
 
    // Combina la clase del módulo y cualquier clase adicional
   const buttonClass = `${styles[variant]} ${className}`.trim();
+  // Solo muestra el icono si la variante es btn-princ-s o btn-princ-l
+  const showIcon = variant === "btn-princ-s" || variant === "btn-princ-l";
 
    return (
     <button
@@ -31,6 +34,8 @@ const Button: React.FC<ButtonProps> = ({
       disabled={disabled}
       {...rest}
     >
+      {showIcon && <LuMapPin className={styles["btn-icon"]} />}
+
       {children}
     </button>
   );
