@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <header>
-        <Link href="/">
+        <Link to="/">
           <img src="./src/assets/Logo.svg" alt="Logo CheckMyLift" className='logo' />
         </Link>
       </header>
