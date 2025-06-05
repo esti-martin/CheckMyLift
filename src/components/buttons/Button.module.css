@@ -8,7 +8,7 @@
     padding: 0.5rem 1.5rem 0.5rem 1.5rem;
     align-items: center;
     transition: 
-        background-color 0.5s;
+        background-color 0.5s ease;
     border: 1px solid transparent;
     font-weight: bold;
     font-size: 1rem;
@@ -38,7 +38,7 @@
     padding: 0.75rem 1rem 0.75rem 1rem;
     align-items: center;
     transition: 
-        background-color 0.5s;
+        background-color 0.5s ease;
     border: 1px solid transparent;
     font-weight: bold;
     font-size: 1.5rem;
@@ -71,11 +71,17 @@
     border-bottom: 3px solid transparent;
     padding-bottom: 0.5rem;
     cursor: pointer;
+    text-decoration: none;
+
     transition: 
-        border-bottom 0.5s;
+        color 0.5s ease;
 
     &:hover {
-        border-bottom: 3px solid var(--primary-color);
+        color: var(--primary-color-hover);
+        text-decoration: underline;
+        text-underline-offset: 1rem;
+        text-decoration-thickness: 3px;
+        /*border-bottom: 3px solid var(--primary-color);*/
         padding-bottom: 0.5rem;
     }
 
