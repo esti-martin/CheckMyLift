@@ -1,28 +1,3 @@
-/*.navbar {    
-    display: flex;
-    flex-direction: row;
-    background-color: #FFF;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 56px;
-    justify-content: space-between;
-    fill: none;
-
-    .navbar-icon {                
-        padding: 16px;
-
-        .rect-filter {
-            stroke: none;
-        }
-
-        &:focus {
-            fill: #5C8EF2;
-            z-index: 1000;
-        }                
-    }
-}*/
-
 .navbar {
   position: fixed;
   bottom: 0;
