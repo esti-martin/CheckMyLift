@@ -1,49 +1,24 @@
 import './App.css'
-import MobileNavbar from './components/navbars/MobileNavbar'
+import { Routes, Route } from "react-router-dom";
+import Layout from './pages/Layout';
+import Home from './pages/Home';
+import MapView from './pages/MapView';
+import FilterSearch from './pages/FilterSearch';
+import Favs from './pages/Favs';
 import "./styles/global.css"
-import ElevatorCard from './components/cards/ElevatorCard'
-import { Link } from 'react-router-dom'
 
 function App() {
 
   return (
-    <>
-      <header>
-        <Link to="/">
-          <img src="./src/assets/Logo.svg" alt="Logo CheckMyLift" className='logo' />
-        </Link>
-      </header>
-        
-      <main>
-        <section className='cardContainer'>
-          <ElevatorCard
-          id=""
-          imageUrl="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
-          title="Tarjeta completa"
-          description="Esta tarjeta contiene todos los elementos que pediste."
-          warningType="negative"
-          onPrimaryClick={() => alert("Acción principal")}
-          onSecondaryClick={() => alert("Acción secundaria")}
-        />
-
-        <ElevatorCard
-          id=""
-          imageUrl="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
-          title="Tarjeta completa"
-          description="Esta tarjeta contiene todos los elementos que pediste."
-          warningType="negative"
-          onPrimaryClick={() => alert("Acción principal")}
-          onSecondaryClick={() => alert("Acción secundaria")}
-        />
-        </section>
-        
-      </main>
-        
-
-
-      <MobileNavbar />
-    </>
-  )
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />        
+        <Route path="vista-mapa" element={<MapView />} />
+        <Route path="filtros" element={<FilterSearch />} />
+        <Route path="favoritos" element={<Favs />} />
+      </Route>
+    </Routes>
+  );
 }
 
 export default App
