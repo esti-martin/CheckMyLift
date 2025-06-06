@@ -1,16 +1,4 @@
 #root {
   max-width: 1280px;
   padding: 0 2rem 2rem 2rem;
-  text-align: center;
-}
-
-.logo {
-  margin: 2rem;
-}
-
-.cardContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-bottom: 3rem;
 }

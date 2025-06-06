@@ -1,11 +1,12 @@
 import { Link, Outlet } from "react-router-dom";
 import MobileNavbar from "../components/navbars/MobileNavbar";
+import styles from "./Layout.module.css"
 
 const Layout: React.FC = () => (
   <>
     <header>
       <Link to="/">
-        <img src="./src/assets/Logo.svg" alt="Logo CheckMyLift" className='logo' />
+        <img src="./src/assets/Logo.svg" alt="Logo CheckMyLift" className={styles.logo} />
       </Link>
     </header>
     <main>

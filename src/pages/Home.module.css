@@ -1,0 +1,10 @@
+.filtro {
+    color: var(--grey);
+}
+
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}

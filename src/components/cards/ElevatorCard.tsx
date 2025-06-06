@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../buttons/Button";
 import WarningMessage from "../warnings/Warning";
 import HeartIcon from "../icons/Icon";
@@ -37,9 +38,11 @@ const ElevatorCard: React.FC<CardProps> = ({
                 <Button variant="btn-princ-s" onClick={onPrimaryClick}>
                     Cómo llegar
                 </Button>
-                <Button variant="btn-second-s" onClick={onSecondaryClick}>
-                    Más información
-                </Button>
+                <Link to={`/elevator/${id}`} className={styles.myLink}>
+                    <Button variant="btn-second-s">
+                        Más información
+                    </Button>
+                </Link>
             </section>
         </section>
     </article>
