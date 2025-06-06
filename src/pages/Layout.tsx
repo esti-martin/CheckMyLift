@@ -1,14 +1,14 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import MobileNavbar from "../components/navbars/MobileNavbar";
+import Header from "../components/header/Header";
 import styles from "./Layout.module.css"
 
 const Layout: React.FC = () => (
   <>
-    <header>
-      <Link to="/">
-        <img src="./src/assets/Logo.svg" alt="Logo CheckMyLift" className={styles.logo} />
-      </Link>
-    </header>
+    <section>
+      <Header/ >
+    </section>
+    
     <main>
       <Outlet /> {/* Aquí se renderizarán las páginas */}
     </main>

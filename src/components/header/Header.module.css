@@ -1,0 +1,17 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: top 0.3s;
+  z-index: 1000;
+  background: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Ajusta según tu diseño */
+}
+
+.hide {
+  top: -70px; /* Mismo valor negativo que la altura del header */
+}
