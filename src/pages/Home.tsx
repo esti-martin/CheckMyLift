@@ -18,7 +18,7 @@ const Home: React.FC = () => {
                         title={station.name}
                         description=""
                         imageUrl=""
-                        warningType="positive"
+                        warningType={station.issues ? "negative" : "positive"}
                     />
                 ))}
             </section> 

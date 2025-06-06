@@ -10,7 +10,6 @@ const MapView: React.FC = () => (
         description="Esta tarjeta contiene todos los elementos que pediste."
         warningType="negative"
         onPrimaryClick={() => alert("Acción principal")}
-        onSecondaryClick={() => alert("Acción secundaria")}
         />
 
         <ElevatorCard
@@ -20,7 +19,6 @@ const MapView: React.FC = () => (
             description="Esta tarjeta contiene todos los elementos que pediste."
             warningType="negative"
             onPrimaryClick={() => alert("Acción principal")}
-            onSecondaryClick={() => alert("Acción secundaria")}
         />
     </section> 
 );

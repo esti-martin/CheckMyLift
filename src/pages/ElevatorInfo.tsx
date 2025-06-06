@@ -21,7 +21,7 @@ const ElevatorInfo: React.FC = () => {
             <section className={styles.elevatorInfo}>
                 {/* Usa el id para cargar datos del ascensor */}
                 <h2>{station.name}</h2>
-                <WarningMessage type="negative" />
+                <WarningMessage type={station.issues ? "negative" : "positive"} />
             </section>
         </section>
     );

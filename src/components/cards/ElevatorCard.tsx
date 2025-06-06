@@ -11,7 +11,6 @@ type CardProps = {
   description: string;
   warningType: "positive" | "negative";
   onPrimaryClick?: () => void;
-  onSecondaryClick?: () => void;
 };
 
 const ElevatorCard: React.FC<CardProps> = ({
@@ -21,7 +20,6 @@ const ElevatorCard: React.FC<CardProps> = ({
   description,
   warningType,
   onPrimaryClick,
-  onSecondaryClick,
 }) => (
     <article className={styles.card}>
         <section className={styles.imageWrapper}>

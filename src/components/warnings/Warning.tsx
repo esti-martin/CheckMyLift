@@ -18,8 +18,8 @@ const icons = {
 };
 
 const TEXTS: Record<WarningType, string> = {
-  positive: "Todo funciona correctamente",
-  negative: "Hay una avería en un ascensor.",
+  positive: "Todo funciona correctamente.",
+  negative: "Existe una avería.",
 };
 
 const WarningMessage: React.FC<WarningMessageProps> = ({
