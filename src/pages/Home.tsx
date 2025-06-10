@@ -8,15 +8,15 @@ const Home: React.FC = () => {
     if (loading) return <p>Cargando...</p>;
 
     return (
-        <section className='main'>
+        <section className='containerHome'>
             <p className={styles.filtro}><span>Filtros: </span>Aquí van un montón de filtros</p>
             <section className={styles.cardContainer}>
                 {stations.map(station => (
                     <ElevatorCard
                         key={station.code}
-                        id={station.code}
+                        code={station.code}
                         title={station.name}
-                        description=""
+                        line={station.line}
                         imageUrl=""
                         warningType={station.issues ? "negative" : "positive"}
                     />

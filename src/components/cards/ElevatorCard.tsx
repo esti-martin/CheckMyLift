@@ -5,38 +5,44 @@ import HeartIcon from "../icons/Icon";
 import styles from "./ElevatorCard.module.css"
 
 type CardProps = {
-  id: string;
+  code: string;
   imageUrl: string;
   title: string;
-  description: string;
+  line: string;
   warningType: "positive" | "negative";
   onPrimaryClick?: () => void;
 };
 
 const ElevatorCard: React.FC<CardProps> = ({
-  id,
-  imageUrl,
+  code,
   title,
-  description,
+  line,
+  timeToNextStation,
   warningType,
   onPrimaryClick,
 }) => (
     <article className={styles.card}>
         <section className={styles.imageWrapper}>
-            <img src={imageUrl} alt={title} className={styles.image} />
+            <img 
+                src={`assets/stations/${code}.jpg`} 
+                alt={title} 
+                className={styles.image} 
+                //El atributo onError permite mostrar una imagen por defecto si no existe la del code
+                onError={(e) => { e.currentTarget.src = '/assets/stations/empty-box.svg'; }}
+            />
             <section className={styles.favorite}>
-                <HeartIcon id={id} />
+                <HeartIcon id={code} />
             </section>
         </section>
         <section className={styles.content}>
             <WarningMessage type={warningType} />
             <h2 className={styles.title}>{title}</h2>
-            <p className={styles.description}>{description}</p>
+            <p className={styles.line}><span>{line}</span></p>
             <section className={styles.actions}>
                 <Button variant="btn-princ-s" onClick={onPrimaryClick}>
                     Cómo llegar
                 </Button>
-                <Link to={`/elevator/${id}`} className={styles.myLink}>
+                <Link to={`/elevator/${code}`} className={styles.myLink}>
                     <Button variant="btn-second-s">
                         Más información
                     </Button>

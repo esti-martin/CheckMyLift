@@ -16,6 +16,7 @@
         img {
             width: 100%;
             height: auto;
+            object-fit: cover;
             max-height: 120px;
             border-radius: 0.5rem 0.5rem 0 0;
         }
@@ -44,8 +45,16 @@
             margin-top: 1.5rem;
         }
 
-        p {
+        .line {
             margin-bottom: 1.5rem;
+
+            span {
+                background-color: rgba(112, 108, 120, 0.25);
+                padding: 0.25rem 0.75rem 0.25rem 0.75rem;
+                border-radius: 0.25rem;
+                display: inline-block;
+            }
+            
         }
 
         .actions {
