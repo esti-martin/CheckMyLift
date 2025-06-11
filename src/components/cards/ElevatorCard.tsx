@@ -6,7 +6,6 @@ import styles from "./ElevatorCard.module.css"
 
 type CardProps = {
   code: string;
-  imageUrl: string;
   title: string;
   line: string;
   timeToNextStation: string;

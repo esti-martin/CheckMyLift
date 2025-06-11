@@ -18,7 +18,6 @@ const Home: React.FC = () => {
                         title={station.name}
                         line={station.line}
                         timeToNextStation={station.timeToNextStation}
-                        imageUrl=""
                         warningType={station.issues ? "negative" : "positive"}
                     />
                 ))}
