@@ -19,7 +19,6 @@ const ElevatorCard: React.FC<CardProps> = ({
   line,
   timeToNextStation,
   warningType,
-  onPrimaryClick,
 }) => (
     <article className={styles.card}>
         <section className={styles.imageWrapper}>
@@ -42,7 +41,15 @@ const ElevatorCard: React.FC<CardProps> = ({
                 <p className={styles.time}><span>{timeToNextStation}'</span></p>
             </section>
             <section className={styles.actions}>
-                <Button variant="btn-princ-s" onClick={onPrimaryClick}>
+                <Button 
+                    variant="btn-princ-s" 
+                    onClick={() => {
+                        window.open(
+                        `https://www.google.es/maps?hl=es&q=estacion+metro+${encodeURIComponent(title)}`,
+                        '_blank'
+                        );
+                    }}
+                >
                     Cómo llegar
                 </Button>
                 <Link to={`/elevator/${code}`} className={styles.myLink}>
