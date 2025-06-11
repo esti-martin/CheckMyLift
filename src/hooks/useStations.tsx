@@ -5,6 +5,7 @@ export type Station = {
   name: string;    // Nombre de la estación
   zone: string;    // Zona a la que pertenece la estación
   line: string;    // Línea a la que pertenece la estación
+  timeToNextStation: string; // Tiempo de espera
   issues: boolean; // Si la estación tiene incidencias
   // Añadir más datos si son necesarios.
 };

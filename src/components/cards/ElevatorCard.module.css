@@ -45,17 +45,31 @@
             margin-top: 1.5rem;
         }
 
-        .line {
+        .lineTime {
+            display: flex;
+            gap: 1rem;
             margin-bottom: 1.5rem;
 
-            span {
-                background-color: rgba(112, 108, 120, 0.25);
+            .line {
+
+                span {
+                    background-color: rgba(112, 108, 120, 0.25);
+                    padding: 0.25rem 0.75rem 0.25rem 0.75rem;
+                    border-radius: 0.25rem;
+                    display: inline-block;
+                }
+            
+            }
+
+            .time {
+                background-color: var(--light-blue-20);
                 padding: 0.25rem 0.75rem 0.25rem 0.75rem;
                 border-radius: 0.25rem;
                 display: inline-block;
             }
-            
         }
+
+        
 
         .actions {
             display: flex;

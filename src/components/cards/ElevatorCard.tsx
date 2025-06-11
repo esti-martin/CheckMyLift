@@ -9,6 +9,7 @@ type CardProps = {
   imageUrl: string;
   title: string;
   line: string;
+  timeToNextStation: string;
   warningType: "positive" | "negative";
   onPrimaryClick?: () => void;
 };
@@ -37,7 +38,10 @@ const ElevatorCard: React.FC<CardProps> = ({
         <section className={styles.content}>
             <WarningMessage type={warningType} />
             <h2 className={styles.title}>{title}</h2>
-            <p className={styles.line}><span>{line}</span></p>
+            <section className={styles.lineTime}>
+                <p className={styles.line}><span>{line}</span></p>
+                <p className={styles.time}><span>{timeToNextStation}'</span></p>
+            </section>
             <section className={styles.actions}>
                 <Button variant="btn-princ-s" onClick={onPrimaryClick}>
                     Cómo llegar
