@@ -1,46 +1,47 @@
 import React, { useEffect, useState } from "react";
 import { LuHeart } from "react-icons/lu";
 import { FaHeart } from "react-icons/fa";
-import styles from "./Icon.module.css"
+import styles from "./Icon.module.css";
+import { getFavoritesFromStorage, saveFavoritesToStorage } from "../../hooks/useFavorites";
 
 type HeartIconProps = {
   id: string; // ID único de la card
   className?: string;
 };
 
-const FAVORITES_KEY = "myAppFavorites";
-
-function getFavoritesFromStorage(): string[] {
-  if (typeof window === "undefined") return [];
-  const stored = localStorage.getItem(FAVORITES_KEY);
-  return stored ? JSON.parse(stored) : [];
-}
-
-function saveFavoritesToStorage(favorites: string[]) {
-  if (typeof window === "undefined") return;
-  localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
-}
 
 const HeartIcon: React.FC<HeartIconProps> = ({ id, className = "" }) => {
   const [active, setActive] = useState(false);
 
-  // Al montar, lee el estado desde localStorage
+  // Al montar y cuando cambian los favoritos globalmente
   useEffect(() => {
-    const favorites = getFavoritesFromStorage();
-    setActive(favorites.includes(id));
+    const updateActive = () => {
+      const favorites = getFavoritesFromStorage();
+      setActive(favorites.includes(id));
+    };
+    updateActive(); // Inicial
+    window.addEventListener("favoritesChanged", updateActive);
+    window.addEventListener("storage", updateActive);
+    return () => {
+      window.removeEventListener("favoritesChanged", updateActive);
+      window.removeEventListener("storage", updateActive);
+    };
   }, [id]);
 
-  // Al cambiar active, actualiza localStorage
-  useEffect(() => {
-    const favorites = getFavoritesFromStorage();
-    if (active && !favorites.includes(id)) {
-      saveFavoritesToStorage([...favorites, id]);
-    } else if (!active && favorites.includes(id)) {
-      saveFavoritesToStorage(favorites.filter(favId => favId !== id));
-    }
-  }, [active, id]);
 
-  const toggle = () => setActive(a => !a);
+ // Guarda en localStorage solo cuando el usuario hace clic
+  const toggle = () => {
+    const favorites = getFavoritesFromStorage();
+    let newFavorites;
+    if (favorites.includes(id)) {
+      newFavorites = favorites.filter(favId => favId !== id);
+    } else {
+      newFavorites = [...favorites, id];
+    }
+    saveFavoritesToStorage(newFavorites);
+    window.dispatchEvent(new Event("favoritesChanged"));
+    // El estado se actualizará automáticamente por el useEffect de arriba
+  };
 
   return (
     <button

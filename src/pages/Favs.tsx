@@ -5,21 +5,27 @@ import styles from "./Favs.module.css";
 import { getFavoritesFromStorage } from "../hooks/useFavorites"; 
 
 const Favs: React.FC = () => {
-  const { stations, loading } = useStations();
-  const [favoriteCodes, setFavoriteCodes] = useState<string[]>([]);
+    const { stations, loading } = useStations();
 
-  // Carga los favoritos al montar el componente
-  useEffect(() => {
-    const handleStorageChange = () => {
-    setFavoriteCodes(getFavoritesFromStorage());
-    };
+    const [favoriteCodes, setFavoriteCodes] = useState<string[]>(getFavoritesFromStorage());
 
-    // Escucha cambios en localStorage
-    window.addEventListener("storage", handleStorageChange);
-    return () => window.removeEventListener("storage", handleStorageChange);
+    // Escucha cambios en localStorage (de otros tabs/ventanas)
+    useEffect(() => {
+        const onStorage = () => setFavoriteCodes(getFavoritesFromStorage());
+        window.addEventListener("storage", onStorage);
+        return () => window.removeEventListener("storage", onStorage);
     }, []);
 
-    // Filtra las estaciones favoritas
+   useEffect(() => {
+    const updateFavorites = () => setFavoriteCodes(getFavoritesFromStorage());
+    window.addEventListener("favoritesChanged", updateFavorites);
+    window.addEventListener("storage", updateFavorites);
+    return () => {
+        window.removeEventListener("favoritesChanged", updateFavorites);
+        window.removeEventListener("storage", updateFavorites);
+    };
+}, []);
+
     const favoriteStations = stations.filter(station => 
         favoriteCodes.includes(station.code)
     );
@@ -28,15 +34,16 @@ const Favs: React.FC = () => {
 
     // Si no hay estaciones favoritas y ya ha cargado
     if (!loading && favoriteStations.length === 0) {
-    return (
-        <section className='containerFavs'>
-            <section className={styles.error}>
-                <img src="/assets/stations/pagina-perdida.svg" alt="" aria-hidden="true"/>
-                <p>No tienes estaciones favoritas aún. ¡Empieza a marcar algunas!</p>
+        return (
+            <section className='containerFavs'>
+                <section className={styles.error}>
+                    <img src="/assets/stations/pagina-perdida.svg" alt="" aria-hidden="true"/>
+                    <h3>¡Ups! ¡Aquí no hay nada!</h3>
+                    <p>Guarda tu primer ascensor y ten acceso rápido y directo a él.</p>
+                </section>
+                
             </section>
-            
-        </section>
-    );
+        );
     }
 
     return (
