@@ -4,29 +4,23 @@ import Button from "../buttons/Button";
 
 type FormProps = {
   options: Array<{ value: string; label: string }>;
+  title?: string;
 };
 
-const Form: React.FC<FormProps> = ({ options }) => {
+const Form: React.FC<FormProps> = ({ options, title = "" }) => {
     const [selectedType, setSelectedType] = useState("");
     const [description, setDescription] = useState("");
 
-    
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        setSelectedType("");
-        setDescription("");
-        setTimeout(() => {}, 100);
-    };
 
     return (
     <form 
       action="https://formsubmit.co/hola.checkmylift@gmail.com"
       method="POST"
-      onSubmit={handleSubmit}
     >
 
       {/* Campos ocultos para personalizar el email */}
       <input type="hidden" name="_subject" value="Nuevo reporte de avería" />
+      <input type="hidden" name="ascensor" value={title} />
       <input type="hidden" name="_captcha" value="false" /> 
       {/* Opcional: desactiva captcha */}
       {/* <input type="hidden" name="_next" value="https://tudominio.com/gracias" /> */}
@@ -35,7 +29,7 @@ const Form: React.FC<FormProps> = ({ options }) => {
         <label htmlFor="type">Tipo de avería:</label>
         <select
           id="type"
-          name="type" // IMPORTANTE: Añade el atributo name
+          name="type" 
           value={selectedType}
           onChange={(e) => setSelectedType(e.target.value)}
           required

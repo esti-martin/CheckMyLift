@@ -56,6 +56,7 @@ const IssueModal: React.FC<IssueModalProps> = ({
         <h3>Avisar de una avería en {title}</h3>
         <Form
           options={options}
+          title={title}
         />
       </div>
     </section>
