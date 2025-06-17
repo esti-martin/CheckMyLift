@@ -17,5 +17,9 @@
   .active {
     color: var(--light-blue);
   }
+
+  :hover {
+    color: var(--dark-blue)
+  }
 }
 
