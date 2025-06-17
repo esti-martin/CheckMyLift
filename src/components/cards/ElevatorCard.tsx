@@ -46,17 +46,6 @@ const ElevatorCard: React.FC<CardProps> = ({
                     <p className={styles.time}><span>{timeToNextStation}'</span></p>
                 </section>
                 <section className={styles.actions}>
-                    <Button 
-                        variant="btn-princ-s" 
-                        onClick={() => {
-                            window.open(
-                            `https://www.google.es/maps?hl=es&q=estacion+metro+${encodeURIComponent(title)}`,
-                            '_blank'
-                            );
-                        }}
-                    >
-                        Cómo llegar
-                    </Button>
 
                     {/* Botón de más información para futuro
                     <Link to={`/elevator/${code}`} className={styles.myLink}>
@@ -71,6 +60,19 @@ const ElevatorCard: React.FC<CardProps> = ({
                     >
                         Avisar de una avería
                     </Button>
+
+                    <Button 
+                        variant="btn-princ-s" 
+                        onClick={() => {
+                            window.open(
+                            `https://www.google.es/maps?hl=es&q=estacion+metro+${encodeURIComponent(title)}`,
+                            '_blank'
+                            );
+                        }}
+                    >
+                        Cómo llegar
+                    </Button>
+                    
                 </section>
                 <IssueModal
                     isOpen={isOpen}
