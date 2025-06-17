@@ -43,7 +43,7 @@ const ElevatorCard: React.FC<CardProps> = ({
                 <h2 className={styles.title}>{title}</h2>
                 <section className={styles.lineTime}>
                     <p className={styles.line}><span>{line}</span></p>
-                    <p className={styles.time}><span>{timeToNextStation}'</span></p>
+                    {/*<p className={styles.time}><span>{timeToNextStation}'</span></p>*/}
                 </section>
                 <section className={styles.actions}>
 
@@ -72,7 +72,7 @@ const ElevatorCard: React.FC<CardProps> = ({
                     >
                         Cómo llegar
                     </Button>
-                    
+
                 </section>
                 <IssueModal
                     isOpen={isOpen}

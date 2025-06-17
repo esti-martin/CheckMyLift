@@ -1,0 +1,22 @@
+.searchContainer {
+  margin: 2rem 0;
+  max-width: 600px;
+
+    .searchInput {
+        width: 100%;
+        padding: 0.75rem;
+        border: 2px solid var(--grey-20);
+        border-radius: 8px;
+        font-size: 1rem;
+
+        :focus {
+            outline: none;
+            border-color: var(--dark-blue);
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+        }
+    }
+
+
+}
+
+

@@ -28,12 +28,12 @@ const navItems: NavItem[] = [
     icon: <span role="svg" aria-label="Mapa"><LuMap /></span>,
     to: "/vista-mapa",
   },
-  {
+  /*{
     key: "filter",
     label: "Filtro",
     icon: <span role="svg" aria-label="Filtrar"><LuSlidersHorizontal /></span>,
     to: "/filtros"
-  },
+  },*/
   {
     key: "favorites",
     label: "Favoritos",

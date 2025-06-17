@@ -1,27 +1,45 @@
+import { useState } from 'react';
 import ElevatorCard from '../components/cards/ElevatorCard';
-import { useStations } from "../hooks/useStations"
-import styles from "./Home.module.css"
+import { useStations } from "../hooks/useStations";
+import SearchBar from '../components/search/SearchBar';
+import styles from "./Home.module.css";
+
 
 const Home: React.FC = () => {
     const { stations, loading } = useStations();
+    const [searchTerm, setSearchTerm] = useState('');
 
     if (loading) return <p>Cargando...</p>;
 
+    const filteredStations = stations.filter(station =>
+        station.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    const handleSearch = (term: string) => {
+        setSearchTerm(term);
+    };
+
     return (
         <section className='containerHome'>
-            <p className={styles.filtro}><span>Filtros: </span>Aquí van un montón de filtros</p>
+            <section className={styles.buscador}>
+                <SearchBar onSearch={handleSearch} />
+            </section>
             <section className={styles.cardContainer}>
-                {stations.map(station => (
-                    <ElevatorCard
-                        key={station.code}
-                        code={station.code}
-                        title={station.name}
-                        line={station.line}
-                        timeToNextStation={station.timeToNextStation}
-                        warningType={station.issues ? "negative" : "positive"}
-                    />
-                ))}
-            </section> 
+                {filteredStations.length === 0 ? (
+                    <p className={styles.noResults}>No hay estaciones que coincidan con "{searchTerm}"</p>
+                ) : (
+                    filteredStations.map(station => (
+                        <ElevatorCard
+                            key={station.code}
+                            code={station.code}
+                            title={station.name}
+                            line={station.line}
+                            timeToNextStation={station.timeToNextStation}
+                            warningType={station.issues ? "negative" : "positive"}
+                        />
+                    ))
+                )}
+            </section>
         </section>
     );
 }

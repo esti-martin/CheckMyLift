@@ -1,11 +1,11 @@
-.filtro {
-    color: var(--grey);
-    margin-top: 6rem;
-}
-
 .cardContainer {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     margin-bottom: 3rem;
+}
+
+.buscador {
+    margin-right: 2rem;
+    margin-top: 7rem;
 }
