@@ -32,7 +32,7 @@ const ElevatorCard: React.FC<CardProps> = ({
                     alt={title} 
                     className={styles.image} 
                     //El atributo onError permite mostrar una imagen por defecto si no existe la del code
-                    onError={(e) => { e.currentTarget.src = '/assets/stations/empty-box.svg'; }}
+                    onError={(e) => { e.currentTarget.src = './assets/stations/empty-box.svg'; }}
                 />
                 <section className={styles.favorite}>
                     <HeartIcon id={code} />
