@@ -1,6 +1,12 @@
+.containerHome {
+    display: flex;
+    flex-direction: column;
+}
+
 .cardContainer {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
     margin-bottom: 3rem;
 }

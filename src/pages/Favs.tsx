@@ -35,7 +35,7 @@ const Favs: React.FC = () => {
     // Si no hay estaciones favoritas y ya ha cargado
     if (!loading && favoriteStations.length === 0) {
         return (
-            <section className='containerFavs'>
+            <section className={styles.containerFavs}>
                 <section className={styles.error}>
                     <img src="/assets/stations/pagina-perdida.svg" alt="" aria-hidden="true"/>
                     <h3>¡Ups! ¡Aquí no hay nada!</h3>
@@ -47,7 +47,7 @@ const Favs: React.FC = () => {
     }
 
     return (
-        <section className='containerFavs'>
+        <section className={styles.containerFavs}>
             <section className={styles.cardContainer}>
                 {favoriteStations.map(station => (
                 <ElevatorCard

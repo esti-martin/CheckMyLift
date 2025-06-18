@@ -1,8 +1,11 @@
-
+.containerFavs {
+    margin: 0 auto;
+}
 
 .cardContainer {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
     margin-bottom: 3rem;
     margin-top: 7rem;

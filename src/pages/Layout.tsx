@@ -9,7 +9,7 @@ const Layout: React.FC = () => (
       <Header/ >
     </section>
     
-    <main>
+    <main className={styles.mainContent}>
       <Outlet /> {/* Aquí se renderizarán las páginas */}
     </main>
     <MobileNavbar />
