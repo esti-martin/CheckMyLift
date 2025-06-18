@@ -1,28 +1,46 @@
+ import { useState } from 'react';
 import ElevatorCard from '../components/cards/ElevatorCard';
+import { useStations } from "../hooks/useStations";
+import SearchBar from '../components/search/SearchBar';
+import styles from "./Home.module.css";
 
-const FilterSearch: React.FC = () => (
-    <section className='cardContainer'>
-        <h2>FilterSearch</h2>
-        <ElevatorCard
-        id=""
-        imageUrl="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
-        title="Tarjeta completa"
-        description="Esta tarjeta contiene todos los elementos que pediste."
-        warningType="negative"
-        onPrimaryClick={() => alert("Acción principal")}
-        onSecondaryClick={() => alert("Acción secundaria")}
-        />
 
-        <ElevatorCard
-            id=""
-            imageUrl="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
-            title="Tarjeta completa"
-            description="Esta tarjeta contiene todos los elementos que pediste."
-            warningType="negative"
-            onPrimaryClick={() => alert("Acción principal")}
-            onSecondaryClick={() => alert("Acción secundaria")}
-        />
-    </section> 
-);
+const FilterSearch: React.FC = () => {
+    const { stations, loading } = useStations();
+    const [searchTerm, setSearchTerm] = useState('');
+
+    if (loading) return <p>Cargando...</p>;
+
+    const filteredStations = stations.filter(station =>
+        station.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    const handleSearch = (term: string) => {
+        setSearchTerm(term);
+    };
+
+    return (
+        <section className='containerHome'>
+            <section className={styles.buscador}>
+                <SearchBar onSearch={handleSearch} />
+            </section>
+            <section className={styles.cardContainer}>
+                {filteredStations.length === 0 ? (
+                    <p className={styles.noResults}>No hay estaciones que coincidan con "{searchTerm}"</p>
+                ) : (
+                    filteredStations.map(station => (
+                        <ElevatorCard
+                            key={station.code}
+                            code={station.code}
+                            title={station.name}
+                            line={station.line}
+                            warningType={station.issues ? "negative" : "positive"}
+                        />
+                    ))
+                )}
+            </section>
+        </section>
+    );
+}
 
 export default FilterSearch;

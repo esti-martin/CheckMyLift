@@ -55,7 +55,6 @@ const Favs: React.FC = () => {
                     code={station.code}
                     title={station.name}
                     line={station.line}
-                    timeToNextStation={station.timeToNextStation}
                     warningType={station.issues ? "negative" : "positive"}
                 />
                 ))}

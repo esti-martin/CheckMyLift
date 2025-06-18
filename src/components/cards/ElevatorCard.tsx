@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import Button from "../buttons/Button";
 import WarningMessage from "../warnings/Warning";
 import HeartIcon from "../icons/Icon";
@@ -10,7 +10,7 @@ type CardProps = {
   code: string;
   title: string;
   line: string;
-  timeToNextStation: string;
+  //timeToNextStation: string;
   warningType: "positive" | "negative";
   onPrimaryClick?: () => void;
 };
@@ -19,7 +19,7 @@ const ElevatorCard: React.FC<CardProps> = ({
   code,
   title,
   line,
-  timeToNextStation,
+  //timeToNextStation,
   warningType,
 }) => {
     const { isOpen, openModal, closeModal } = useModal();
