@@ -2,7 +2,7 @@ import './App.css'
 import { Routes, Route } from "react-router-dom";
 import Layout from './pages/Layout';
 import Home from './pages/Home';
-import MapView from './pages/MapView';
+import MapView from "./pages/MapView"
 import FilterSearch from './pages/FilterSearch';
 import Favs from './pages/Favs';
 import ElevatorInfo from './pages/ElevatorInfo';

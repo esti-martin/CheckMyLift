@@ -1,7 +1,6 @@
 import styles from "./MobileNavbar.module.css";
-import { Link, NavLink } from "react-router-dom";
-import { useState } from "react";
-import { LuHouse, LuMap, LuSlidersHorizontal, LuHeart, LuEllipsisVertical } from "react-icons/lu";
+import {  NavLink } from "react-router-dom";
+import { LuHouse, LuHeart, LuEllipsisVertical } from "react-icons/lu";
 
 
 // 1. Define el tipo para los ítems del menú
@@ -21,12 +20,6 @@ const navItems: NavItem[] = [
     label: "Inicio",
     icon: <span role="svg" aria-label="Inicio"><LuHouse /></span>,
     to: "/",
-  },
-  {
-    key: "map",
-    label: "Mapa",
-    icon: <span role="svg" aria-label="Mapa"><LuMap /></span>,
-    to: "/vista-mapa",
   },
   /*{
     key: "filter",
