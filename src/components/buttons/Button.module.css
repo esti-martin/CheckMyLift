@@ -90,7 +90,7 @@
         }
 
     &:active {
-        border-bottom: 3px solid #6E0248;
+        /*border-bottom: 3px solid #6E0248;*/
         padding-bottom: 0.5rem;
     }
 
