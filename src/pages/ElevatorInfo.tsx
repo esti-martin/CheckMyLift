@@ -11,7 +11,7 @@ import useIssues from '../hooks/useIssues';
 const ElevatorInfo: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const { stations, loading } = useStations();
-    const { issues, loading: issuesLoading, error } = useIssues();
+    const { issues, error } = useIssues();
 
     if (loading) return <p>Cargando...</p>;
     if (error) return <p>Error al cargar avisos</p>;
