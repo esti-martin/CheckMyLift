@@ -28,10 +28,6 @@ const ElevatorInfo: React.FC = () => {
     issue.estacion && issue.estacion.toLowerCase() === station.name.toLowerCase()
   );
 
-  console.log("issues:", issues);
-console.log("station.name:", station.name);
-console.log("stationIssues:", stationIssues);
-
     return (
         <section className={styles.elevatorContent}>
             <BackButton />
