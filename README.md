@@ -1,54 +1,41 @@
-# React + TypeScript + Vite
+# CheckMyLift
+Sistema de información y gestión de accesibilidad de ascensores y escaleras mecánicas en Metro Bilbao
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📄 Documentación
 
-Currently, two official plugins are available:
+A continuación, encontrarás los enlaces a toda la documentación relevante del proyecto:
+- **Historias de usuario que contemplan los requisitos de la actividad:** [Trello](#) *(https://trello.com/invite/b/68554965066c387960f13472/ATTIb8f58df43e4c1d804d756fd68a31a0bb29A50142/checkmylift)*
+- **Tareas TODO:** [Trello](#) *(https://trello.com/invite/b/68554965066c387960f13472/ATTIb8f58df43e4c1d804d756fd68a31a0bb29A50142/checkmylift)*
+- **Prototipo de baja fidelidad (boceto):** [Figma](#) *(https://www.figma.com/design/KL5OE3qLs0wqBGM2x4qZuT/CheckMyLift?node-id=0-1&t=Glh8TY9BLmXhGy57-1)*
+- **Prototipo de alta fidelidad y guía de estilo:** [Figma](#) *(https://www.figma.com/design/KL5OE3qLs0wqBGM2x4qZuT/CheckMyLift?node-id=0-1&t=Glh8TY9BLmXhGy57-1)*
+- **HTML y recursos (imágenes y css) en un repositorio github personal:** [Github](#) *(https://github.com/esti-martin/CheckMyLift)*
+- **Web publicada en internet:** *(https://esti-martin.github.io/CheckMyLift/)*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## 🎯 Objetivos
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Proporcionar información actualizada y accesible sobre el estado de los ascensores en las estaciones de Metro Bilbao.
+- Permitir a los usuarios consultar rápidamente la accesibilidad, servicios y avisos de avería de cada estación.
+- Facilitar la navegación, búsqueda y gestión de estaciones favoritas desde cualquier dispositivo.
+- Aportar una experiencia de usuario intuitiva y accesible.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🛠️ Tareas realizadas
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Desarrollo de una aplicación web moderna con React y TypeScript.
+- Integración con APIs externas para la obtención de datos en tiempo real.
+- Diseño y desarrollo de componentes UI interactivos (formularios, botones, modales, tooltips, etc.).
+- Gestión de estado y actualización automática de información.
+- Desarrollo de pruebas unitarias y automatizadas para garantizar la calidad del código.
+- Integración continua y despliegue automático con GitHub Actions.
+- Documentación técnica y funcional del proyecto.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 👥 Roles desempeñados
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- Desarrolladora Frontend y UX/UI: Responsable del diseño, desarrollo y mantenimiento de la interfaz de usuario.
+- Gestora de Calidad: Encargado de la implementación y ejecución de pruebas automatizadas.
+- Documentadora: Responsable de la creación y actualización de la documentación técnica y funcional.
+- Coordinadora de Integración Continua: Configuración y gestión del flujo de despliegue automático.
+
+## 📌 Estado del proyecto
+
+🚧 Proyecto en desarrollo
