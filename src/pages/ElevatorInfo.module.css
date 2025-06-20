@@ -3,13 +3,27 @@
 
     .line {
 
-                span {
-                    background-color: rgba(112, 108, 120, 0.25);
-                    padding: 0.25rem 0.75rem 0.25rem 0.75rem;
-                    border-radius: 0.25rem;
-                    display: inline-block;
-                }
-            
-            }
+        span {
+            background-color: rgba(112, 108, 120, 0.25);
+            padding: 0.25rem 0.75rem 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            display: inline-block;
+        }
+    
+    }
+
+    ul {
+        list-style-type: none;
+
+        li {
+            margin-bottom: 1rem;
+        }
+
+        .accessibilityIcon {
+        vertical-align: middle;
+        margin-right: 0.5rem;
+        font-size: 1.5rem;
+        }
+    }
 }
 

@@ -4,6 +4,8 @@ import BackButton from '../components/buttons/BackButton';
 import WarningMessage from '../components/warnings/Warning';
 import styles from "./ElevatorInfo.module.css";
 import stationInfo from "../assets/data/stationInfo.json";
+import { LuAccessibility } from "react-icons/lu";
+import { TbStairs } from "react-icons/tb";
 
 const ElevatorInfo: React.FC = () => {
     const { id } = useParams<{ id: string }>();
@@ -34,7 +36,13 @@ const ElevatorInfo: React.FC = () => {
                     <ul>
                         {extraInfo.exits.map((entrance: any, idx: number) => (
                             <li key={idx}>
+                                {entrance.wheelchairAccessible ? (
+    <LuAccessibility className={styles.accessibilityIcon} />
+) : (
+    <TbStairs className={styles.accessibilityIcon} />
+)}
                                 <strong>{entrance.name}:</strong> {entrance.address}
+                                
                             </li>
                         ))}
                     </ul>
