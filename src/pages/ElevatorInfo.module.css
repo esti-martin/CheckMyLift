@@ -1,0 +1,15 @@
+.elevatorContent {
+    margin-top: 7rem;
+
+    .line {
+
+                span {
+                    background-color: rgba(112, 108, 120, 0.25);
+                    padding: 0.25rem 0.75rem 0.25rem 0.75rem;
+                    border-radius: 0.25rem;
+                    display: inline-block;
+                }
+            
+            }
+}
+
