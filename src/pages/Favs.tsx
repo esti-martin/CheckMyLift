@@ -3,6 +3,7 @@ import { useStations } from "../hooks/useStations";
 import ElevatorCard from "../components/cards/ElevatorCard";
 import styles from "./Favs.module.css";
 import { getFavoritesFromStorage } from "../hooks/useFavorites"; 
+import ScrollToTopIcon from "../components/icons/ScrollToTopIcon";
 
 const Favs: React.FC = () => {
     const { stations, loading } = useStations();
@@ -59,6 +60,7 @@ const Favs: React.FC = () => {
                 />
                 ))}
             </section>
+            <ScrollToTopIcon />
         </section>
     );
 };
