@@ -3,6 +3,7 @@ import ElevatorCard from '../components/cards/ElevatorCard';
 import { useStations } from "../hooks/useStations";
 import SearchBar from '../components/search/SearchBar';
 import styles from "./Home.module.css";
+import ScrollToTopIcon from '../components/icons/ScrollToTopIcon';
 
 
 const Home: React.FC = () => {
@@ -39,6 +40,7 @@ const Home: React.FC = () => {
                     ))
                 )}
             </section>
+            <ScrollToTopIcon />
         </section>
     );
 }
