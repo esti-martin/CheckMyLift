@@ -37,7 +37,7 @@ const ElevatorCard: React.FC<CardProps> = ({
                 />
                 <section className={styles.favorite}>
                     <HeartIcon id={code} />
-                </section>
+                </section> 
             </section>
             <section className={styles.content}>
                 <WarningMessage type={warningType} />
