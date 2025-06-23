@@ -4,6 +4,7 @@ import { useStations } from "../hooks/useStations";
 import SearchBar from '../components/search/SearchBar';
 import styles from "./Home.module.css";
 import ScrollToTopIcon from '../components/icons/ScrollToTopIcon';
+import { filterStationByName } from '../services/stationFilters';
 
 
 const Home: React.FC = () => {
@@ -12,9 +13,7 @@ const Home: React.FC = () => {
 
     if (loading) return <p>Cargando...</p>;
 
-    const filteredStations = stations.filter(station =>
-        station.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    const filteredStations = filterStationByName(stations, searchTerm);
 
     const handleSearch = (term: string) => {
         setSearchTerm(term);

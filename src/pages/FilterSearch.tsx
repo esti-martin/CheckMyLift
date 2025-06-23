@@ -3,6 +3,7 @@ import ElevatorCard from '../components/cards/ElevatorCard';
 import { useStations } from "../hooks/useStations";
 import SearchBar from '../components/search/SearchBar';
 import styles from "./Home.module.css";
+import { filterStationByName } from '../services/stationFilters';
 
 
 const FilterSearch: React.FC = () => {
@@ -11,9 +12,7 @@ const FilterSearch: React.FC = () => {
 
     if (loading) return <p>Cargando...</p>;
 
-    const filteredStations = stations.filter(station =>
-        station.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    const filteredStations = filterStationByName(stations, searchTerm);
 
     const handleSearch = (term: string) => {
         setSearchTerm(term);
